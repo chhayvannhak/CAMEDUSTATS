@@ -69,23 +69,25 @@ Use these four pillars when explaining the engineering behind **CAMEDUSTATS** to
 
 All derived metrics are calculated dynamically from the original MoEYS source columns:
 
-- **Repeater Rate (%):**
-  $$\text{Repeater Rate} = \frac{\text{t\_repeat}}{\text{t\_enrol}} \times 100$$
+| Indicator | Formula | Source Columns |
+| :--- | :--- | :--- |
+| **Repeater Rate (%)** | $\frac{\text{Repeat Students}}{\text{Total Enrollment}} \times 100$ | `t_repeat`, `t_enrol` |
+| **Students per Teacher** *(Aggregate Proxy)* | $\frac{\text{Total Enrollment}}{\text{Total Teachers}}$ | `t_enrol`, `t_teacher` |
+| **Average Class Size** | $\frac{\text{Total Enrollment}}{\text{Total Classes}}$ | `t_enrol`, `no_class` |
+| **Disadvantaged School Share (%)** | $\frac{\text{Disadvantaged Schools}}{\text{Total Schools}} \times 100$ | `dis_school`, `no_school` |
+| **Female Enrollment / Teacher Share (%)** | $\frac{\text{Female Count}}{\text{Total Count}} \times 100$ | `enrol_girl` / `t_enrol`, `teacher_f` / `t_teacher` |
 
-- **Students per Teacher (Aggregate Proxy):**
-  $$\text{Students per Teacher} = \frac{\text{t\_enrol}}{\text{t\_teacher}}$$
+**Composite Priority Score (0–100)**
 
-- **Average Class Size:**
-  $$\text{Students per Class} = \frac{\text{t\_enrol}}{\text{no\_class}}$$
+Each component is min-max normalized across the 25 provinces to $[0, 1]$ and combined using weighted scoring:
 
-- **Disadvantaged School Share (%):**
-  $$\text{Disadvantaged Share} = \frac{\text{dis\_school}}{\text{no\_school}} \times 100$$
+```math
+\text{Priority Score} = \left(0.40 \cdot \text{Norm}(\text{Repeater Rate}) + 0.40 \cdot \text{Norm}(\text{Students per Teacher}) + 0.20 \cdot \text{Norm}(\text{Disadvantaged Share})\right) \times 100
+```
 
-- **Composite Priority Score ($0\text{–}100$):** Each component is min-max normalized across the 25 provinces to $[0, 1]$ and combined using weighted scoring:
-  $$\text{Priority Score} = \Big(0.40 \cdot \text{Norm}(\text{Repeater Rate}) + 0.40 \cdot \text{Norm}(\text{Students / Teacher}) + 0.20 \cdot \text{Norm}(\text{Disadvantaged Share})\Big) \times 100$$
-  - **High Priority:** $\ge 55$
-  - **Moderate Priority:** $35 \text{ to } 54.9$
-  - **Lower Strain:** $< 35$
+- **Priority Tiers:** High Priority ($\ge 55$), Moderate ($35$–$54.9$), Lower Strain ($< 35$).
+- **Derived Male Counts:** Calculated as total minus female counts (`t_enrol - enrol_girl` and `t_repeat - repeat_gir`).
+- **All-Years View:** Aggregates each province by its multi-year annual average to avoid double-counting students across consecutive academic years.
 
 ---
 
