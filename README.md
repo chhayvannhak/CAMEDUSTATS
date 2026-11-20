@@ -1,90 +1,130 @@
-# EduInsight Cambodia
+# CAMEDUSTATS — Cambodia Public Education Statistics Portal
 
-An interactive Streamlit dashboard for exploring Cambodia Education Statistics and Indicators 2015–2016.
+**CAMEDUSTATS** is an interactive, bilingual (**English / ភាសាខ្មែរ**) web analytics platform built with **Python, Streamlit, Pandas, and Plotly** to explore multi-year public education statistics across all 25 provinces of Cambodia (2015–2016 through 2020–2021).
+
+Instead of displaying static raw counts, the platform automatically harmonizes multiple yearly datasets into normalized educational risk, equity, and resource-strain indicators—complete with a responsive Dark/Light theme and interactive visualizations.
+
+---
 
 ## Project Structure
 
 ```text
-EduInsight-Cambodia/
-│
-├── app.py
-├── style.css
-├── requirements.txt
-├── README.md
-└── CambodiaEducationStatisticsandIndicators2015-2016.csv
+CAMEDUSTATS/
+├── app.py                                                # Main application, ETL pipeline, bilingual dictionary & views
+├── style.css                                             # Custom layout, theme variables, fixed sidebar & typography
+├── requirements.txt                                      # Python dependencies
+├── .gitignore                                            # Excludes cache & virtual environment files
+├── README.md                                             # Documentation & architecture guide
+├── CambodiaEducationStatisticsandIndicators2015-2016.csv # 2015–2016 provincial dataset
+├── CambodiaPublicEducationStatistics2016-2017.csv        # 2016–2017 provincial dataset
+├── CambodiaPublicEducationStatistics2017-2018.csv        # 2017–2018 provincial dataset
+├── CambodiaPublicEducationStatistics2018-2019.csv        # 2018–2019 provincial dataset
+└── CambodiaPublicEducationStatistics2020-2021.csv        # 2020–2021 provincial dataset
 ```
 
-## Features
+> **Note:** Placing any additional yearly MoEYS CSV file inside the project folder (or a `data/` subfolder) is automatically discovered and integrated on startup.
 
-1. Home — Education statistics overview
-2. National Dashboard — National education indicators and visualizations
-3. Provincial Analysis — Compare education indicators by province
-4. Student & Gender — Explore student enrollment and gender participation
-5. Education Workforce — Analyze teachers and education personnel
-6. Data Explorer — Search, filter, inspect, and download CSV data
-7. About Project — Project objectives, methodology, and limitations
+---
 
-## Technologies
+## Core System Architecture (How It Works)
 
-- Python
-- Streamlit
-- Pandas
-- Plotly
-- Custom CSS
+Use these four pillars when explaining the engineering behind **CAMEDUSTATS** to your mentor:
 
-## Installation on Windows
+1. **Automated Multi-Year ETL & Schema Harmonization (`pathlib`, `re`, `pandas`)**
+   - Uses `pathlib.Path.glob("*.csv")` and regex (`re.search`) to automatically detect every academic year file and extract its reporting period.
+   - Resolves real-world inconsistencies across historical MoEYS files without modifying the original CSVs:
+     - Renames the column typo `t_e1264nrol` $\rightarrow$ `t_enrol` in the `2017–2018` file.
+     - Standardizes province spelling drift (`Tbaung Khmum` $\rightarrow$ `Tboung Khmum`) in `2020–2021` so longitudinal trend lines and map coordinates stay continuous.
+     - Coerces numeric columns and safely fills blank cells in `2018–2019` to prevent calculation errors.
+   - Cached with `@st.cache_data` so CSV parsing and indicator calculations run once rather than on every UI click.
 
-Open the project folder in VS Code.
+2. **State Management & Multi-Year Aggregation (`st.session_state`, `pandas.groupby`)**
+   - Tracks the active page, selected year filter, language (`en` / `km`), and color theme (`dark` / `light`) in `st.session_state`.
+   - Defaults to **All Years (2015–2021)** by computing each province's **annual average** (`groupby(["prov_en", "prov_kh"]).mean()`). This prevents double-counting the same students across consecutive school years.
 
-Create a virtual environment:
+3. **Bilingual Localization Engine (i18n)**
+   - Uses a centralized `TEXT` dictionary containing paired English and Khmer strings for every heading, chart title, axis label, hover tooltip, and table column.
+   - Dynamically maps province labels between `prov_en` and `prov_kh` and loads unified **Manrope** + **Noto Sans Khmer** Google Fonts across HTML and Plotly canvas elements.
 
+4. **Dynamic Theme & Custom UI Layer (`CSS Variables`, `html.escape`)**
+   - A Python token generator (`getThemeTokens`) injects CSS custom properties (`--bg`, `--surface`, `--border`, `--text`, `--risk-high`, etc.) and synchronizes those exact hex values with Plotly charts and map backgrounds.
+   - Custom HTML components pass through a helper that strips leading indentation and escapes strings via `html.escape` for safe, predictable rendering, while preserving Streamlit's native `Material Symbols Rounded` icon font.
+
+---
+
+## Page-by-Page Technology Breakdown
+
+| Page / Module | Purpose | Technologies & Techniques Used |
+| :--- | :--- | :--- |
+| **Global Shell (Sidebar & Top Bar)** | Navigation, year filtering, language switching, and Dark/Light mode | **Streamlit** (`st.sidebar`, `st.button`, `st.selectbox`, `st.columns`, `st.session_state`), **Custom CSS** (flexbox fixed sidebar pinning the Loaded Data summary to the bottom; CSS variables for instant theme switching). |
+| **1. Overview** | National executive summary, spatial map, top priority provinces, and national multi-year trends | **Pandas** (aggregations & min-max scaling), **Plotly Express** (`px.scatter_geo` bubble map using mapped provincial lat/lon coordinates; `px.area` enrollment trajectory), **Plotly Graph Objects** (`go.Figure` dual-axis line chart combining repeater rate and teacher load), **HTML/CSS** (severity color-coded Priority Watchlist cards). |
+| **2. Provincial Insights** | Risk-vs-strain quadrant benchmarking, full 25-province rankings, and multi-province trend comparison | **Plotly Express** (`px.scatter` quadrant matrix with `add_vline`/`add_hline` national average benchmarks and selective outlier `add_annotation` callouts; horizontal `px.bar` rankings; `px.line` multi-year comparator), **Streamlit** (`st.multiselect` capped at 6 provinces for readability). |
+| **3. Equity & Workforce** | Gender parity in enrollment and repetition, female teacher representation, and school infrastructure | **Pandas** (derived male counts and gender-specific repetition rates), **Plotly Graph Objects** (`go.Bar` grouped horizontal chart comparing male vs. female repeater rates), **Plotly Express** (horizontal `px.bar` for female teacher share with a 50% parity line, plus Top 12 rankings for disadvantaged schools and pagoda classes). |
+| **4. Data Table** | Interactive exploration and clean data export | **Pandas** (case-insensitive bilingual filtering across `prov_en` and `prov_kh`, rounding & column pruning to keep only essential indicators), **Streamlit** (`st.text_input`, `st.dataframe`, `st.download_button` exporting UTF-8 with BOM `utf-8-sig` so Khmer script opens cleanly in Excel). |
+| **5. About** | Transparent documentation of goals, data coverage, formulas, and limitations | **Custom HTML/CSS** (structured two-column documentation cards) driven by the same bilingual `TEXT` dictionary so documentation translates seamlessly into Khmer. |
+
+---
+
+## Methodology & Indicator Formulas
+
+All derived metrics are calculated dynamically from the original MoEYS source columns:
+
+- **Repeater Rate (%):**
+  $$\text{Repeater Rate} = \frac{\text{t\_repeat}}{\text{t\_enrol}} \times 100$$
+
+- **Students per Teacher (Aggregate Proxy):**
+  $$\text{Students per Teacher} = \frac{\text{t\_enrol}}{\text{t\_teacher}}$$
+
+- **Average Class Size:**
+  $$\text{Students per Class} = \frac{\text{t\_enrol}}{\text{no\_class}}$$
+
+- **Disadvantaged School Share (%):**
+  $$\text{Disadvantaged Share} = \frac{\text{dis\_school}}{\text{no\_school}} \times 100$$
+
+- **Composite Priority Score ($0\text{–}100$):** Each component is min-max normalized across the 25 provinces to $[0, 1]$ and combined using weighted scoring:
+  $$\text{Priority Score} = \Big(0.40 \cdot \text{Norm}(\text{Repeater Rate}) + 0.40 \cdot \text{Norm}(\text{Students / Teacher}) + 0.20 \cdot \text{Norm}(\text{Disadvantaged Share})\Big) \times 100$$
+  - **High Priority:** $\ge 55$
+  - **Moderate Priority:** $35 \text{ to } 54.9$
+  - **Lower Strain:** $< 35$
+
+---
+
+## Installation & Running Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/chhayvannhak/CAMEDUSTATS.git
+cd CAMEDUSTATS
+```
+
+### 2. Create & Activate a Virtual Environment
+
+**Windows (PowerShell):**
 ```powershell
 python -m venv venv
-```
-
-Activate it:
-
-```powershell
 .\venv\Scripts\Activate.ps1
 ```
 
-Install dependencies:
-
-```powershell
-pip install -r requirements.txt
+**macOS / Linux:**
+```bash
+python3 -m venv venv
+source venv/bin/activate
 ```
 
-Run the application:
+### 3. Install Dependencies & Launch
 
-```powershell
+```bash
+pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Open your browser:
+Open your browser at `http://localhost:8501`.
 
-```text
-http://localhost:8501
-```
+---
 
-## Dataset
+## Limitations & Responsible Use
 
-Cambodia Education Statistics and Indicators 2015–2016.
-
-The dashboard uses historical data from the supplied CSV file.
-
-## Methodology Notes
-
-- Male enrollment is derived by subtracting female enrollment from total enrollment.
-- Male repeat students are derived from total repeat students minus female repeat students.
-- Male teachers are derived from total teachers minus female teachers.
-- Female participation percentages are calculated from the corresponding totals.
-- Student-to-teacher values are aggregate proxies, not classroom-level ratios.
-- The dataset represents one historical reporting period and does not establish multi-year trends.
-
-## Important
-
-Keep the CSV file in the same folder as app.py.
-
-Keep the filename unchanged:
-
-CambodiaEducationStatisticsandIndicators2015-2016.csv
+- **Provincial Aggregation:** Indicators are macro provincial proxies and may mask urban-rural disparities within individual districts or schools.
+- **Historical Coverage:** Represents reported MoEYS public education statistics from `2015–2016` through `2020–2021` (interim missing years such as `2019–2020` are omitted rather than interpolated).
+- **Descriptive Scope:** Visualizations highlight relative disparities to support exploration and discussion; they do not establish causality.
