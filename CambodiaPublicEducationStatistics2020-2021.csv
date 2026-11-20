@@ -1,0 +1,26 @@
+ogc_fid,hrpcode,prov_en,prov_kh,no_school,dis_school,no_class,clas_pagod,t_enrol,enrol_girl,t_repeat,repeat_gir,t_teacher,teacher_f,t_nonteach,nonteach_f,t_staff,staff_f,reference
+1,KH04,Kampong Chhnang,កំពង់ឆ្នាំង,472,4,3328,23,117538,59843,6008,1986,3532,1719,728,220,4260,1939,Public_education_statistics_and_indicators__2020-2021.pdf
+2,KH08,Kandal,កណ្តាល,756,2,6735,186,258461,127877,14548,5131,7345,4118,1445,365,8790,4483,Public_education_statistics_and_indicators__2020-2021.pdf
+3,KH12,Phnom Penh,ភ្នំពេញ,381,1,5602,106,242175,118392,5601,2039,9294,5377,1130,422,10424,5799,Public_education_statistics_and_indicators__2020-2021.pdf
+4,KH14,Prey Veng,ព្រៃវែង,1063,8,6924,142,239206,117724,10476,3699,5762,2753,1910,487,7672,3240,Public_education_statistics_and_indicators__2020-2021.pdf
+5,KH20,Svay Rieng,ស្វាយរៀង,509,8,3487,47,119640,59271,3372,1135,3686,1443,947,225,4633,1668,Public_education_statistics_and_indicators__2020-2021.pdf
+6,KH05,Kampong Speu,កំពង់ស្ពឺ,625,4,4172,23,166343,82765,5690,2201,4322,1962,843,153,5165,2115,Public_education_statistics_and_indicators__2020-2021.pdf
+7,KH07,Kampot,កំពត,612,7,3901,60,127618,62743,4102,1376,4671,2322,997,228,5668,2550,Public_education_statistics_and_indicators__2020-2021.pdf
+8,KH09,Koh Kong,កោះកុង,223,7,1142,3,27262,13349,739,291,1157,547,172,42,1329,589,Public_education_statistics_and_indicators__2020-2021.pdf
+9,KH18,Preah Sihanouk,ព្រះសីហនុ,158,1,1238,0,42971,21414,1531,571,1650,841,273,77,1923,918,Public_education_statistics_and_indicators__2020-2021.pdf
+10,KH21,Takeo,តាកែវ,799,8,5794,140,199945,98992,10440,3598,6433,2658,1714,402,8147,3060,Public_education_statistics_and_indicators__2020-2021.pdf
+11,KH23,Kep,កែប,50,0,293,15,8966,4478,318,106,474,249,96,22,570,271,Public_education_statistics_and_indicators__2020-2021.pdf
+12,KH02,Battambang,បាត់ដំបង,1164,17,8066,76,255335,127247,11140,4063,7034,4235,1718,651,8752,4886,Public_education_statistics_and_indicators__2020-2021.pdf
+13,KH15,Pursat,ពោធិ៍សាត់,548,5,3306,10,106491,53527,6132,2243,3168,1587,695,193,3863,1780,Public_education_statistics_and_indicators__2020-2021.pdf
+14,KH24,Pailin,ប៉ៃលិន,82,0,543,0,16235,8175,622,229,670,347,85,25,755,372,Public_education_statistics_and_indicators__2020-2021.pdf
+15,KH01,Banteay Meanchey,បន្ទាយមានជ័យ,815,8,4807,8,159964,80509,4159,1409,4829,2534,908,220,5737,2754,Public_education_statistics_and_indicators__2020-2021.pdf
+16,KH06,Kampong Thom,កំពង់ធំ,795,10,4906,67,155933,79307,7230,2592,4313,2433,809,200,5122,2633,Public_education_statistics_and_indicators__2020-2021.pdf
+17,KH13,Preah Vihear,ព្រះវិហារ,408,2,2192,9,57606,29467,3995,1503,2131,1113,337,96,2468,1209,Public_education_statistics_and_indicators__2020-2021.pdf
+18,KH17,Siemreap,សៀមរាប,1090,17,7554,96,273052,138304,15094,5183,6080,3828,1685,679,7765,4507,Public_education_statistics_and_indicators__2020-2021.pdf
+19,KH22,Oddar Meanchey,ឧត្តរមានជ័យ,364,7,2153,3,56342,27823,3259,1203,1592,749,342,84,1934,833,Public_education_statistics_and_indicators__2020-2021.pdf
+20,KH03,Kampong Cham,កំពង់ចាម,821,8,5978,177,222357,110922,12742,4550,5636,3274,1721,681,7357,3955,Public_education_statistics_and_indicators__2020-2021.pdf
+21,KH25,Tbaung Khmum,ត្បូងឃ្មុំ,717,8,4811,58,169638,85139,7381,2754,3894,2162,896,280,4790,2442,Public_education_statistics_and_indicators__2020-2021.pdf
+22,KH10,Kratie,ក្រចេះ,443,12,2875,80,88008,43964,5469,2112,2636,1664,393,146,3029,1810,Public_education_statistics_and_indicators__2020-2021.pdf
+23,KH11,Mondul Kiri,មណ្ឌលគិរី,130,4,840,2,20822,10662,666,229,905,456,56,11,961,467,Public_education_statistics_and_indicators__2020-2021.pdf
+24,KH16,Ratanak Kiri,រតនគិរី,319,2,1841,17,55554,27171,1687,689,1354,656,139,47,1493,703,Public_education_statistics_and_indicators__2020-2021.pdf
+25,KH19,Stung Treng,ស្ទឹងត្រែង,253,2,1466,2,36013,18006,3131,1253,1388,770,175,56,1563,826,Public_education_statistics_and_indicators__2020-2021.pdf

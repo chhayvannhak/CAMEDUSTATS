@@ -1,0 +1,26 @@
+ogc_fid,ogc_fid0,prov_en,prov_kh,hrpcode,pro_code,no_school,dis_school,no_class,clas_pagod,t_enrol,enrol_girl,t_repeat,repeat_gir,t_teacher,teacher_f,t_nonteach,nonteach_f,t_staff,staff_f,reference
+1,1,Kampong Chhnang,កំពង់ឆ្នាំង,KH04,4,466,,3220,7,118144,59641,5080,1676,3498,1682,700,188,4198,1870,Public_education_statistics_and_indicators__2018-2019.pdf
+2,2,Kandal,កណ្តាល,KH08,8,748,7,6547,24,251350,123416,14523,5120,7246,4002,1482,412,8728,4414,Public_education_statistics_and_indicators__2018-2019.pdf
+3,3,Phnom Penh,ភ្នំពេញ,KH12,12,376,1,5609,18,236464,114772,6597,2159,9841,5742,1042,407,10883,6149,Public_education_statistics_and_indicators__2018-2019.pdf
+4,4,Prey Veng,ព្រៃវែង,KH14,14,1035,20,6615,29,234696,114530,10825,3840,5736,2709,1800,455,7536,3164,Public_education_statistics_and_indicators__2018-2019.pdf
+5,5,Svay Rieng,ស្វាយរៀង,KH20,20,508,,3344,7,118078,58287,3708,1253,3688,1394,929,208,4617,1602,Public_education_statistics_and_indicators__2018-2019.pdf
+6,6,Kampong Speu,កំពង់ស្ពឺ,KH05,5,603,2,4162,11,170222,83971,5931,2157,4471,1957,742,129,5213,2086,Public_education_statistics_and_indicators__2018-2019.pdf
+7,7,Kampot,កំពត,KH07,7,608,4,3699,,129794,63442,4229,1366,4747,2325,938,189,5685,2514,Public_education_statistics_and_indicators__2018-2019.pdf
+8,8,Koh Kong,កោះកុង,KH09,9,218,17,1113,,26513,12817,737,274,1074,484,164,45,1238,529,Public_education_statistics_and_indicators__2018-2019.pdf
+9,9,Preah Sihanouk,ព្រះសីហនុ,KH18,18,156,15,1187,,41484,20519,1169,388,1598,775,239,74,1837,849,Public_education_statistics_and_indicators__2018-2019.pdf
+10,10,Takeo,តាកែវ,KH21,21,782,3,5777,82,206362,100713,9407,3205,6485,2627,1696,391,8181,3018,Public_education_statistics_and_indicators__2018-2019.pdf
+11,11,Kep,កែប,KH23,23,50,,272,7,8689,4340,324,120,455,239,92,15,547,254,Public_education_statistics_and_indicators__2018-2019.pdf
+12,12,Battambang,បាត់ដំបង,KH02,2,1133,17,7494,17,253481,125579,12244,4362,6946,4165,1811,672,8757,4837,Public_education_statistics_and_indicators__2018-2019.pdf
+13,13,Pursat,ពោធិ៍សាត់,KH15,15,537,4,3207,,104684,52250,5820,2237,3156,1520,610,161,3766,1681,Public_education_statistics_and_indicators__2018-2019.pdf
+14,14,Pailin,ប៉ៃលិន,KH24,24,82,,501,,16097,7978,831,260,625,315,76,22,701,337,Public_education_statistics_and_indicators__2018-2019.pdf
+15,15,Banteay Meanchey,បន្ទាយមានជ័យ,KH01,1,818,15,4598,11,152590,76099,4051,1371,4782,2440,888,210,5670,2650,Public_education_statistics_and_indicators__2018-2019.pdf
+16,16,Kampong Thom,កំពង់ធំ,KH06,6,782,6,4593,20,156111,79001,8302,3087,4435,2429,731,179,5166,2608,Public_education_statistics_and_indicators__2018-2019.pdf
+17,17,Preah Vihear,ព្រះវិហារ,KH13,13,401,16,2038,1,55386,27860,3251,1309,1999,1002,266,72,2265,1074,Public_education_statistics_and_indicators__2018-2019.pdf
+18,18,Siemreap,សៀមរាប,KH17,17,1067,49,6918,87,265926,133764,14357,5036,5950,3699,1446,536,7396,4235,Public_education_statistics_and_indicators__2018-2019.pdf
+19,19,Oddar Meanchey,ឧត្តរមានជ័យ,KH22,22,358,,1934,15,54721,26651,3337,1192,1525,679,302,65,1827,744,Public_education_statistics_and_indicators__2018-2019.pdf
+20,20,Kampong Cham,កំពង់ចាម,KH03,3,804,27,5846,111,221707,110363,14544,5235,5835,3390,1695,659,7530,4049,Public_education_statistics_and_indicators__2018-2019.pdf
+21,21,Tboung Khmum,ត្បូងឃ្មុំ,KH25,25,703,18,4642,32,172123,85405,7966,3018,3757,2023,712,223,4469,2246,Public_education_statistics_and_indicators__2018-2019.pdf
+22,22,Kratie,ក្រចេះ,KH10,10,418,14,2736,70,86175,42715,5378,2021,2550,1585,367,122,2917,1707,Public_education_statistics_and_indicators__2018-2019.pdf
+23,23,Mondul Kiri,មណ្ឌលគិរី,KH11,11,126,4,783,2,20253,10194,784,293,812,380,46,9,858,389,Public_education_statistics_and_indicators__2018-2019.pdf
+24,24,Ratanak Kiri,រតនគិរី,KH16,16,303,5,1703,,54148,26126,1862,760,1275,590,123,30,1398,620,Public_education_statistics_and_indicators__2018-2019.pdf
+25,25,Stung Treng,ស្ទឹងត្រែង,KH19,19,218,4,1359,1,33974,16838,2764,1198,1217,657,169,58,1386,715,Public_education_statistics_and_indicators__2018-2019.pdf

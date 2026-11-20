@@ -1,0 +1,26 @@
+ogc_fid,pro_code,prov_en,prov_kh,hrpcode,hrparent,no_school,dis_school,no_class,clas_pagod,t_enrol,enrol_girl,t_repeat,repeat_gir,t_teacher,teacher_f,t_nonteach,nonteach_f,t_staff,staff_f,reference
+1,4,Kampong Chhnang,កំពង់ឆ្នាំង,KH04,KH,447,4,3093,14,112868,56749,5800,2125,3383,1524,625,172,4008,1696,education_statistic_and_indicator_2015_2016_en.pdf
+2,8,Kandal,កណ្តាល,KH08,KH,729,13,6355,27,235083,114190,14486,4990,6999,3794,1436,367,8435,4161,education_statistic_and_indicator_2015_2016_en.pdf
+3,12,Phnom Penh,ភ្នំពេញ,KH12,KH,375,1,5609,18,229987,111499,7308,2574,10040,5853,1035,386,11075,6239,education_statistic_and_indicator_2015_2016_en.pdf
+4,14,Prey Veng,ព្រៃវែង,KH14,KH,941,12,6225,1,223063,107525,11454,4334,5433,2390,1680,373,7113,2763,education_statistic_and_indicator_2015_2016_en.pdf
+5,20,Svay Rieng,ស្វាយរៀង,KH20,KH,482,1,3216,9,112020,54021,4097,1401,3720,1264,862,169,4582,1433,education_statistic_and_indicator_2015_2016_en.pdf
+6,5,Kampong Speu,កំពង់ស្ពឺ,KH05,KH,562,5,4017,33,165118,80487,7053,2817,4270,1750,805,151,5075,1901,education_statistic_and_indicator_2015_2016_en.pdf
+7,7,Kampot,កំពត,KH07,KH,580,4,3653,273,133226,64479,4678,1704,4541,2191,939,186,5480,2377,education_statistic_and_indicator_2015_2016_en.pdf
+8,9,Koh Kong,កោះកុង,KH09,KH,199,14,973,2,25287,12231,922,372,981,413,139,29,1120,442,education_statistic_and_indicator_2015_2016_en.pdf
+9,18,Preah Sihanouk,ព្រះសីហនុ,KH18,KH,146,1,1164,0,39576,19304,965,367,1641,736,213,66,1854,802,education_statistic_and_indicator_2015_2016_en.pdf
+10,21,Takeo,តាកែវ,KH21,KH,746,5,5777,201,208528,100397,9912,3399,6243,2380,1626,364,7869,2744,education_statistic_and_indicator_2015_2016_en.pdf
+11,23,Kep,កែប,KH23,KH,50,0,281,7,8162,3977,232,74,471,234,95,24,566,258,education_statistic_and_indicator_2015_2016_en.pdf
+12,2,Battambang,បាត់ដំបង,KH02,KH,1044,19,6995,20,233906,115311,11614,4490,6764,3876,1829,665,8593,4541,education_statistic_and_indicator_2015_2016_en.pdf
+13,15,Pursat,ពោធិ៍សាត់,KH15,KH,517,4,2935,7,95840,47525,5308,1948,3111,1430,630,153,3741,1583,education_statistic_and_indicator_2015_2016_en.pdf
+14,24,Pailin,ប៉ៃលិន,KH24,KH,85,6,485,0,15108,7314,524,164,601,286,68,22,669,308,education_statistic_and_indicator_2015_2016_en.pdf
+15,1,Banteay Meanchey,បន្ទាយមានជ័យ,KH01,KH,774,33,4276,21,139995,69636,4534,1679,4635,2258,935,223,5570,2481,education_statistic_and_indicator_2015_2016_en.pdf
+16,6,Kampong Thom,កំពង់ធំ,KH06,KH,748,10,4369,16,147454,74173,10482,4187,4313,2218,711,183,5024,2401,education_statistic_and_indicator_2015_2016_en.pdf
+17,13,Preah Vihear,ព្រះវិហារ,KH13,KH,367,32,1852,6,51656,26064,3887,1580,1853,878,211,56,2064,934,education_statistic_and_indicator_2015_2016_en.pdf
+18,17,Siemreap,សៀមរាប,KH17,KH,1017,37,6147,91,236937,118922,16262,6025,5356,3271,1308,436,6664,3707,education_statistic_and_indicator_2015_2016_en.pdf
+19,22,Oddar Meanchey,ឧត្តរមានជ័យ,KH22,KH,329,4,1747,20,49767,24407,3159,1270,1498,606,253,66,1751,672,education_statistic_and_indicator_2015_2016_en.pdf
+20,3,Kampong Cham,កំពង់ចាម,KH03,KH,757,41,5544,108,212068,105172,14465,5451,5576,3139,1626,561,7202,3700,education_statistic_and_indicator_2015_2016_en.pdf
+21,25,Tboung Khmum,ត្បូងឃ្មុំ,KH25,KH,648,17,4363,42,163550,80775,8787,3327,3372,1723,768,232,4140,1955,education_statistic_and_indicator_2015_2016_en.pdf
+22,10,Kratie,ក្រចេះ,KH10,KH,380,14,2475,67,79717,39616,4895,1928,2500,1481,315,104,2815,1585,education_statistic_and_indicator_2015_2016_en.pdf
+23,11,Mondul Kiri,មណ្ឌលគិរី,KH11,KH,121,9,692,2,17164,8407,728,274,733,330,34,6,767,336,education_statistic_and_indicator_2015_2016_en.pdf
+24,16,Ratanak Kiri,រតនគិរី,KH16,KH,268,12,1390,0,45074,21410,2172,986,1128,499,101,31,1229,530,education_statistic_and_indicator_2015_2016_en.pdf
+25,19,Stung Treng,ស្ទឹងត្រែង,KH19,KH,193,2,1175,0,28482,14168,2656,1108,1183,597,152,53,1335,650,education_statistic_and_indicator_2015_2016_en.pdf

@@ -1,0 +1,536 @@
+:root {
+  --font: "Manrope", "Noto Sans Khmer", "Leelawadee UI", sans-serif;
+}
+
+/* Unified English & Khmer font — never touches Material icon spans */
+
+html,
+body,
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stSidebar"],
+p,
+a,
+li,
+label,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button,
+input,
+select,
+textarea,
+td,
+th,
+[data-baseweb="select"],
+[data-baseweb="select"] div,
+[data-baseweb="popover"] li[role="option"],
+[data-baseweb="popover"] li[role="option"] div {
+  font-family: var(--font) !important;
+}
+
+/* Preserve Streamlit Material Symbols icons (fixes keyboard_double_arrow & contrast/light_mode text) */
+
+[data-testid="stIconMaterial"],
+.material-symbols-rounded,
+.material-icons {
+  font-family: "Material Symbols Rounded", "Material Icons" !important;
+}
+
+/* Base Canvas & Top Clearance (prevents collision with Streamlit top-right menu) */
+
+.stApp,
+[data-testid="stAppViewContainer"] {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+  font-size: 15px;
+}
+
+[data-testid="stHeader"] {
+  background: transparent !important;
+}
+
+[data-testid="stAppDeployButton"] {
+  display: none !important;
+}
+
+.block-container {
+  max-width: 1460px;
+  padding: 3.6rem 2.6rem 2.6rem !important;
+}
+
+/* Fixed, Static, Non-Scrollable Sidebar */
+
+section[data-testid="stSidebar"] {
+  background: var(--sidebar-bg) !important;
+  border-right: 1px solid var(--border) !important;
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+  overflow: hidden !important;
+}
+
+section[data-testid="stSidebar"] > div:first-child,
+section[data-testid="stSidebar"] [data-testid="stSidebarContent"] {
+  background: transparent !important;
+  height: 100vh !important;
+  max-height: 100vh !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+[data-testid="stSidebarResizeHandle"] {
+  display: none !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  padding: 0.6rem 0.9rem 1.2rem !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] > div,
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] [data-testid="stVerticalBlock"] {
+  flex: 1 1 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+/* Pin Loaded Data card cleanly to the bottom without causing scroll */
+
+section[data-testid="stSidebar"] [data-testid="stSidebarUserContent"] [data-testid="stVerticalBlock"] > div:last-child {
+  margin-top: auto !important;
+  padding-top: 12px !important;
+}
+
+.brand-header {
+  padding: 2px 8px 0;
+}
+
+.brand-name {
+  color: var(--text);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  line-height: 1.2;
+}
+
+.brand-sub {
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+.sidebar-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 14px 6px 12px;
+}
+
+/* Smaller, Left-Aligned Sidebar Menu Items (14.5px) */
+
+section[data-testid="stSidebar"] .stButton {
+  margin-bottom: 4px;
+}
+
+section[data-testid="stSidebar"] .stButton > button {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  text-align: left !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  border-radius: 9px !important;
+  padding: 9px 12px !important;
+  color: var(--muted) !important;
+  font-size: 14.5px !important;
+  font-weight: 500 !important;
+  box-shadow: none !important;
+  transition: background 0.15s ease, color 0.15s ease !important;
+}
+
+section[data-testid="stSidebar"] .stButton > button > div {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+section[data-testid="stSidebar"] .stButton > button p {
+  text-align: left !important;
+  font-size: 14.5px !important;
+  font-weight: inherit !important;
+  line-height: 1.35 !important;
+  color: inherit !important;
+  margin: 0 !important;
+}
+
+section[data-testid="stSidebar"] .stButton > button:hover {
+  background: var(--btn-hover-bg) !important;
+  color: var(--text) !important;
+}
+
+section[data-testid="stSidebar"] .stButton > button[kind="primary"],
+section[data-testid="stSidebar"] .stButton > button[data-testid="stBaseButton-primary"],
+section[data-testid="stSidebar"] .stButton > button[data-testid="baseButton-primary"] {
+  background: var(--btn-active-bg) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+  font-weight: 700 !important;
+}
+
+.sidebar-bottom-card {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  padding: 13px 14px;
+}
+
+.sidebar-info-label {
+  color: var(--muted);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.sidebar-info-value {
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.sidebar-info-small {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.55;
+  margin-top: 4px;
+}
+
+/* Headings */
+
+.page-heading {
+  margin: 4px 0 22px;
+}
+
+.page-title {
+  color: var(--text);
+  font-size: clamp(26px, 2.6vw, 34px);
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+}
+
+.page-subtitle {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+  margin-top: 6px;
+}
+
+.section-heading {
+  margin: 18px 0 12px;
+}
+
+.section-title {
+  color: var(--text);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.section-description {
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+
+.spacer-12 { height: 12px; }
+
+/* KPI Cards */
+
+.metric-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 19px 21px;
+  min-height: 122px;
+  margin-bottom: 12px;
+  transition: border-color 0.15s ease;
+}
+
+.metric-card:hover {
+  border-color: var(--accent);
+}
+
+.metric-label {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.metric-value {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  font-size: clamp(25px, 2.2vw, 32px);
+  font-weight: 800;
+  letter-spacing: -0.6px;
+  line-height: 1.15;
+  margin-top: 10px;
+}
+
+.metric-note {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+/* Color-Coded Priority Watchlist & About Cards */
+
+.dataset-panel,
+.about-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  margin-bottom: 14px;
+}
+
+.dataset-panel-subtitle {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.dataset-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  border-left: 3px solid transparent;
+  padding: 11px 4px 11px 12px;
+  margin-left: -4px;
+  border-radius: 4px;
+}
+
+.dataset-stat.risk-high { border-left-color: var(--risk-high); }
+.dataset-stat.risk-mod { border-left-color: var(--risk-mod); }
+.dataset-stat.risk-low { border-left-color: var(--risk-low); }
+
+.stat-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.risk-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.risk-dot.risk-high { background: var(--risk-high); }
+.risk-dot.risk-mod { background: var(--risk-mod); }
+.risk-dot.risk-low { background: var(--risk-low); }
+
+.stat-prov {
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.stat-sub {
+  color: var(--muted);
+  font-size: 12.5px;
+  margin-top: 3px;
+  padding-left: 16px;
+}
+
+.score-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.score-pill {
+  font-weight: 800;
+  font-size: 13.5px;
+  padding: 4px 11px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-variant-numeric: tabular-nums;
+}
+
+.score-pill.risk-high {
+  background: var(--risk-high-bg);
+  color: var(--risk-high);
+  border-color: var(--risk-high-border);
+}
+
+.score-pill.risk-mod {
+  background: var(--risk-mod-bg);
+  color: var(--risk-mod);
+  border-color: var(--risk-mod-border);
+}
+
+.score-pill.risk-low {
+  background: var(--risk-low-bg);
+  color: var(--risk-low);
+  border-color: var(--risk-low-border);
+}
+
+.risk-tag {
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.risk-tag.risk-high { color: var(--risk-high); }
+.risk-tag.risk-mod { color: var(--risk-mod); }
+.risk-tag.risk-low { color: var(--risk-low); }
+
+.about-card-title {
+  color: var(--text);
+  font-size: 17.5px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.about-card-body {
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.75;
+}
+
+.about-list {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.8;
+}
+
+.about-list li {
+  margin-bottom: 6px;
+}
+
+/* Charts, Tables & Form Controls */
+
+div[data-testid="stPlotlyChart"] {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 12px 6px;
+  margin-bottom: 14px;
+}
+
+[data-testid="stDataFrame"] {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.table-meta {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  margin: 8px 0 12px;
+}
+
+.stSelectbox label,
+.stMultiSelect label,
+.stTextInput label {
+  color: var(--muted) !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+}
+
+[data-baseweb="select"] > div,
+.stTextInput input {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+  border-radius: 10px !important;
+  font-size: 14px !important;
+}
+
+[data-baseweb="select"] span,
+[data-baseweb="select"] input,
+[data-baseweb="select"] svg {
+  color: var(--text) !important;
+  fill: var(--muted) !important;
+}
+
+[data-baseweb="popover"] ul[role="listbox"] {
+  background: var(--surface) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: 10px !important;
+}
+
+[data-baseweb="popover"] li[role="option"] {
+  background: var(--surface) !important;
+  color: var(--text) !important;
+  font-size: 14px !important;
+}
+
+[data-baseweb="popover"] li[role="option"]:hover,
+[data-baseweb="popover"] li[aria-selected="true"] {
+  background: var(--surface-alt) !important;
+}
+
+.stDownloadButton > button {
+  border-radius: 10px !important;
+  border: 1px solid var(--border) !important;
+  background: var(--surface-alt) !important;
+  color: var(--text) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  padding: 10px 18px !important;
+}
+
+.stDownloadButton > button:hover {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+/* Footer */
+
+.app-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  padding: 18px 2px 0;
+  margin-top: 32px;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+
+.app-footer strong {
+  color: var(--text);
+}
+
+@media (max-width: 760px) {
+  .block-container {
+    padding: 3.2rem 1rem 2rem !important;
+  }
+  .app-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
